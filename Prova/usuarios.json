@@ -1,0 +1,13 @@
+[
+    {
+        "nome": "admin",
+        "senha": "admin",
+        "historico": [
+            {
+                "cidade": "florianopolis",
+                "start_date": "2024-12-10",
+                "end_date": "2024-12-13"
+            }
+        ]
+    }
+]

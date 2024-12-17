@@ -7,6 +7,48 @@
                 "cidade": "florianopolis",
                 "start_date": "2024-12-10",
                 "end_date": "2024-12-13"
+            },
+            {
+                "cidade": "S\u00e3o Paulo",
+                "start_date": "2024-12-18",
+                "end_date": "2024-12-23"
+            },
+            {
+                "cidade": "Rio de Janeiro",
+                "start_date": "2024-12-18",
+                "end_date": "2024-12-20"
+            },
+            {
+                "cidade": "Florian\u00f3polis",
+                "start_date": "2024-12-18",
+                "end_date": "2024-12-19"
+            }
+        ]
+    },
+    {
+        "nome": "teste",
+        "senha": "teste",
+        "historico": [
+            {
+                "cidade": "S\u00e3o Paulo",
+                "start_date": "2024-12-20",
+                "end_date": "2024-12-22"
+            },
+            {
+                "cidade": "S\u00e3o Paulo",
+                "start_date": "2024-12-18",
+                "end_date": "2024-12-24"
+            }
+        ]
+    },
+    {
+        "nome": "thiago",
+        "senha": "seberino",
+        "historico": [
+            {
+                "cidade": "Paris",
+                "start_date": "2024-12-20",
+                "end_date": "2024-12-20"
             }
         ]
     }

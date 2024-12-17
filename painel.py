@@ -7,24 +7,14 @@ from io import BytesIO
 from historico import TelaHistorico
 from pesquisa import Pesquisa
 
+from tela import BaseTela
+
 API_KEY = "d777e40f1aed4fcdbee225342240512"
 
-class TelaPrincipal(CTk):
+class TelaPrincipal(BaseTela):
     def __init__(self, user):
-        super().__init__()
-
         self.user = user
-
-        screen_width = self.winfo_screenwidth()
-        screen_height = self.winfo_screenheight()
-
-        width = 300
-        height = 350
-
-        self.title("Previsão do Tempo")
-        self.geometry(f"{width}x{height}+{screen_width//2-width//2}+{screen_height//2-height//2}")
-        self.resizable(False, False)
-
+        super().__init__("Previsão do Tempo", 300, 350)
         self.main()
 
     def main(self):

@@ -1,19 +1,13 @@
 from customtkinter import *
+from tela import BaseTela
 
-class TelaHistorico(CTkToplevel):
+class TelaHistorico(BaseTela):
     def __init__(self, master, usuario):
-        super().__init__(master=master)
         self.usuario = usuario
-
-        screen_width = self.winfo_screenwidth()
-        screen_height = self.winfo_screenheight()
-
-        width = 350
-        height = 350
-
-        self.title("Histórico")
-        self.geometry(f"{width}x{height}+{screen_width//2-width//2}+{screen_height//2-height//2}")
-        self.resizable(False, False)
+        super().__init__("Histórico", 350, 350)
+        
+        # Fazer a janela modal
+        self.wait_visibility()
         self.grab_set()
 
         self.main()

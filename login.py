@@ -1,30 +1,20 @@
 from customtkinter import *
 from tkinter import messagebox
 
-from painel import TelaPrincipal
+from painel import TelaPrincipal 
 from usuario import Usuario, editar_historico, carregar_usuarios, registrar_usuario
+
+from tela import BaseTela
 
 import json
 
 # login
 #------
-class TelaLogin(CTk):
+class TelaLogin(BaseTela):
     def __init__(self):
-        super().__init__()
-
+        super().__init__("Login", 350, 350)  # Configurações iniciais da tela
         global lista_usuarios
         lista_usuarios = carregar_usuarios()
-
-        screen_width = self.winfo_screenwidth()
-        screen_height = self.winfo_screenheight()
-
-        width = 350
-        height = 350
-
-        self.title("Login")
-        self.geometry(f"{width}x{height}+{screen_width//2-width//2}+{screen_height//2-height//2}")
-        self.resizable(False, False)
-
         self.main()
 
     
@@ -69,7 +59,7 @@ class TelaLogin(CTk):
                 app.mainloop()
                 return
 
-        messagebox.showerror("Erro", "Usuário ou senha inválido!")
+        self.show_message("Erro", "Usuário ou senha inválido!", error=True)
 
     def telaRegistro(self):                            # indo para a tela de registro
         self.destroy()
@@ -79,20 +69,9 @@ class TelaLogin(CTk):
 
 # registro
 #---------
-class TelaRegistro(CTk):
+class TelaRegistro(BaseTela):
     def __init__(self):
-        super().__init__()
-
-        screen_width = self.winfo_screenwidth()
-        screen_height = self.winfo_screenheight()
-
-        width = 350
-        height = 350
-
-        self.title("Registro")
-        self.geometry(f"{width}x{height}+{screen_width//2-width//2}+{screen_height//2-height//2}")
-        self.resizable(False, False)
-
+        super().__init__("Registro", 350, 350)
         self.main()
 
     def main(self):
@@ -130,12 +109,12 @@ class TelaRegistro(CTk):
         senha = senha_entry.get()
         
         if not user or not senha:
-            messagebox.showerror("Erro", "Nome de usuário e senha não podem estar vazios!")
+            self.show_message("Erro", "Nome de usuário e senha não podem estar vazios!", error=True)
             return
         
         novo_usuario = Usuario(user, senha, None)
         if registrar_usuario(novo_usuario):
-            messagebox.showinfo("Sucesso", "Conta criada com sucesso!")
+            self.show_message("Sucesso", "Conta criada com sucesso!")
             self.telaLogin()
 
             self.telaPrincipal()
